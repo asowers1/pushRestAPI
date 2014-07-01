@@ -1,0 +1,506 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		491197241961C80400D38C61 /* RESTfulInterface.m in Sources */ = {isa = PBXBuildFile; fileRef = 491197231961C80400D38C61 /* RESTfulInterface.m */; };
+		499873E1195B0E8200BA7589 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 499873E0195B0E8200BA7589 /* main.m */; };
+		499873E4195B0E8200BA7589 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 499873E3195B0E8200BA7589 /* AppDelegate.m */; };
+		499873E7195B0E8200BA7589 /* pushRestAPI.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 499873E5195B0E8200BA7589 /* pushRestAPI.xcdatamodeld */; };
+		499873EA195B0E8200BA7589 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 499873E9195B0E8200BA7589 /* ViewController.m */; };
+		499873ED195B0E8200BA7589 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 499873EB195B0E8200BA7589 /* Main.storyboard */; };
+		499873EF195B0E8200BA7589 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 499873EE195B0E8200BA7589 /* Images.xcassets */; };
+		499873FB195B0E8200BA7589 /* pushRestAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 499873FA195B0E8200BA7589 /* pushRestAPITests.m */; };
+		4998E804195DC76000607260 /* PUSHBeacon.m in Sources */ = {isa = PBXBuildFile; fileRef = 4998E803195DC76000607260 /* PUSHBeacon.m */; };
+		4998E809195DE75000607260 /* CLBeacon+Push.m in Sources */ = {isa = PBXBuildFile; fileRef = 4998E808195DE75000607260 /* CLBeacon+Push.m */; };
+		4998E80C195DEE0A00607260 /* PUSHListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 4998E80B195DEE0A00607260 /* PUSHListener.m */; };
+		49A051F0195CB68900BD8B37 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A051EF195CB68900BD8B37 /* CoreLocation.framework */; };
+		49A051F2195CB68E00BD8B37 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A051F1195CB68E00BD8B37 /* CoreBluetooth.framework */; };
+		49A051F4195CB6B000BD8B37 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A051F3195CB6B000BD8B37 /* CoreFoundation.framework */; };
+		49A051F6195CB6B500BD8B37 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A051F5195CB6B500BD8B37 /* Foundation.framework */; };
+		49A051F8195CB72100BD8B37 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A051F7195CB72100BD8B37 /* CoreGraphics.framework */; };
+		49A051FA195CB72600BD8B37 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49A051F9195CB72600BD8B37 /* UIKit.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		499873F5195B0E8200BA7589 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 499873D3195B0E8200BA7589 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 499873DA195B0E8200BA7589;
+			remoteInfo = pushRestAPI;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		491197221961C80400D38C61 /* RESTfulInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESTfulInterface.h; sourceTree = "<group>"; };
+		491197231961C80400D38C61 /* RESTfulInterface.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESTfulInterface.m; sourceTree = "<group>"; };
+		499873DB195B0E8200BA7589 /* pushRestAPI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pushRestAPI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		499873DF195B0E8200BA7589 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		499873E0195B0E8200BA7589 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		499873E2195B0E8200BA7589 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		499873E3195B0E8200BA7589 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		499873E6195B0E8200BA7589 /* pushRestAPI.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = pushRestAPI.xcdatamodel; sourceTree = "<group>"; };
+		499873E8195B0E8200BA7589 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		499873E9195B0E8200BA7589 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		499873EC195B0E8200BA7589 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		499873EE195B0E8200BA7589 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		499873F4195B0E8200BA7589 /* pushRestAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pushRestAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		499873F9195B0E8200BA7589 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		499873FA195B0E8200BA7589 /* pushRestAPITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = pushRestAPITests.m; sourceTree = "<group>"; };
+		4998E800195DC6EC00607260 /* PUSH.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PUSH.h; sourceTree = "<group>"; };
+		4998E802195DC76000607260 /* PUSHBeacon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PUSHBeacon.h; sourceTree = "<group>"; };
+		4998E803195DC76000607260 /* PUSHBeacon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PUSHBeacon.m; sourceTree = "<group>"; };
+		4998E807195DE75000607260 /* CLBeacon+Push.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CLBeacon+Push.h"; path = "../CLBeacon+Push.h"; sourceTree = "<group>"; };
+		4998E808195DE75000607260 /* CLBeacon+Push.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CLBeacon+Push.m"; path = "../CLBeacon+Push.m"; sourceTree = "<group>"; };
+		4998E80A195DEE0A00607260 /* PUSHListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PUSHListener.h; sourceTree = "<group>"; };
+		4998E80B195DEE0A00607260 /* PUSHListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PUSHListener.m; sourceTree = "<group>"; };
+		49A051B5195CA2B600BD8B37 /* pushRestAPI-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "pushRestAPI-Bridging-Header.h"; sourceTree = "<group>"; };
+		49A051EF195CB68900BD8B37 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		49A051F1195CB68E00BD8B37 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		49A051F3195CB6B000BD8B37 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		49A051F5195CB6B500BD8B37 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		49A051F7195CB72100BD8B37 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		49A051F9195CB72600BD8B37 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		499873D8195B0E8200BA7589 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49A051FA195CB72600BD8B37 /* UIKit.framework in Frameworks */,
+				49A051F8195CB72100BD8B37 /* CoreGraphics.framework in Frameworks */,
+				49A051F6195CB6B500BD8B37 /* Foundation.framework in Frameworks */,
+				49A051F4195CB6B000BD8B37 /* CoreFoundation.framework in Frameworks */,
+				49A051F2195CB68E00BD8B37 /* CoreBluetooth.framework in Frameworks */,
+				49A051F0195CB68900BD8B37 /* CoreLocation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		499873F1195B0E8200BA7589 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		499873D2195B0E8200BA7589 = {
+			isa = PBXGroup;
+			children = (
+				49A051F9195CB72600BD8B37 /* UIKit.framework */,
+				49A051F7195CB72100BD8B37 /* CoreGraphics.framework */,
+				49A051F5195CB6B500BD8B37 /* Foundation.framework */,
+				49A051F3195CB6B000BD8B37 /* CoreFoundation.framework */,
+				49A051F1195CB68E00BD8B37 /* CoreBluetooth.framework */,
+				49A051EF195CB68900BD8B37 /* CoreLocation.framework */,
+				499873DD195B0E8200BA7589 /* pushRestAPI */,
+				499873F7195B0E8200BA7589 /* pushRestAPITests */,
+				499873DC195B0E8200BA7589 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		499873DC195B0E8200BA7589 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				499873DB195B0E8200BA7589 /* pushRestAPI.app */,
+				499873F4195B0E8200BA7589 /* pushRestAPITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		499873DD195B0E8200BA7589 /* pushRestAPI */ = {
+			isa = PBXGroup;
+			children = (
+				499873E2195B0E8200BA7589 /* AppDelegate.h */,
+				499873E3195B0E8200BA7589 /* AppDelegate.m */,
+				499873E8195B0E8200BA7589 /* ViewController.h */,
+				499873E9195B0E8200BA7589 /* ViewController.m */,
+				499873EB195B0E8200BA7589 /* Main.storyboard */,
+				499873EE195B0E8200BA7589 /* Images.xcassets */,
+				499873E5195B0E8200BA7589 /* pushRestAPI.xcdatamodeld */,
+				499873DE195B0E8200BA7589 /* Supporting Files */,
+				49A051B5195CA2B600BD8B37 /* pushRestAPI-Bridging-Header.h */,
+				4998E800195DC6EC00607260 /* PUSH.h */,
+				4998E802195DC76000607260 /* PUSHBeacon.h */,
+				4998E803195DC76000607260 /* PUSHBeacon.m */,
+				4998E807195DE75000607260 /* CLBeacon+Push.h */,
+				4998E808195DE75000607260 /* CLBeacon+Push.m */,
+				4998E80A195DEE0A00607260 /* PUSHListener.h */,
+				4998E80B195DEE0A00607260 /* PUSHListener.m */,
+				491197221961C80400D38C61 /* RESTfulInterface.h */,
+				491197231961C80400D38C61 /* RESTfulInterface.m */,
+			);
+			path = pushRestAPI;
+			sourceTree = "<group>";
+		};
+		499873DE195B0E8200BA7589 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				499873DF195B0E8200BA7589 /* Info.plist */,
+				499873E0195B0E8200BA7589 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		499873F7195B0E8200BA7589 /* pushRestAPITests */ = {
+			isa = PBXGroup;
+			children = (
+				499873FA195B0E8200BA7589 /* pushRestAPITests.m */,
+				499873F8195B0E8200BA7589 /* Supporting Files */,
+			);
+			path = pushRestAPITests;
+			sourceTree = "<group>";
+		};
+		499873F8195B0E8200BA7589 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				499873F9195B0E8200BA7589 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		499873DA195B0E8200BA7589 /* pushRestAPI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 499873FE195B0E8200BA7589 /* Build configuration list for PBXNativeTarget "pushRestAPI" */;
+			buildPhases = (
+				499873D7195B0E8200BA7589 /* Sources */,
+				499873D8195B0E8200BA7589 /* Frameworks */,
+				499873D9195B0E8200BA7589 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = pushRestAPI;
+			productName = pushRestAPI;
+			productReference = 499873DB195B0E8200BA7589 /* pushRestAPI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		499873F3195B0E8200BA7589 /* pushRestAPITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 49987401195B0E8200BA7589 /* Build configuration list for PBXNativeTarget "pushRestAPITests" */;
+			buildPhases = (
+				499873F0195B0E8200BA7589 /* Sources */,
+				499873F1195B0E8200BA7589 /* Frameworks */,
+				499873F2195B0E8200BA7589 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				499873F6195B0E8200BA7589 /* PBXTargetDependency */,
+			);
+			name = pushRestAPITests;
+			productName = pushRestAPITests;
+			productReference = 499873F4195B0E8200BA7589 /* pushRestAPITests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		499873D3195B0E8200BA7589 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Andrew Sowers";
+				TargetAttributes = {
+					499873DA195B0E8200BA7589 = {
+						CreatedOnToolsVersion = 6.0;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+					499873F3195B0E8200BA7589 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 499873DA195B0E8200BA7589;
+					};
+				};
+			};
+			buildConfigurationList = 499873D6195B0E8200BA7589 /* Build configuration list for PBXProject "pushRestAPI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 499873D2195B0E8200BA7589;
+			productRefGroup = 499873DC195B0E8200BA7589 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				499873DA195B0E8200BA7589 /* pushRestAPI */,
+				499873F3195B0E8200BA7589 /* pushRestAPITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		499873D9195B0E8200BA7589 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				499873ED195B0E8200BA7589 /* Main.storyboard in Resources */,
+				499873EF195B0E8200BA7589 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		499873F2195B0E8200BA7589 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		499873D7195B0E8200BA7589 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4998E804195DC76000607260 /* PUSHBeacon.m in Sources */,
+				499873E4195B0E8200BA7589 /* AppDelegate.m in Sources */,
+				4998E80C195DEE0A00607260 /* PUSHListener.m in Sources */,
+				491197241961C80400D38C61 /* RESTfulInterface.m in Sources */,
+				4998E809195DE75000607260 /* CLBeacon+Push.m in Sources */,
+				499873E1195B0E8200BA7589 /* main.m in Sources */,
+				499873EA195B0E8200BA7589 /* ViewController.m in Sources */,
+				499873E7195B0E8200BA7589 /* pushRestAPI.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		499873F0195B0E8200BA7589 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				499873FB195B0E8200BA7589 /* pushRestAPITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		499873F6195B0E8200BA7589 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 499873DA195B0E8200BA7589 /* pushRestAPI */;
+			targetProxy = 499873F5195B0E8200BA7589 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		499873EB195B0E8200BA7589 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				499873EC195B0E8200BA7589 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		499873FC195B0E8200BA7589 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		499873FD195B0E8200BA7589 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		499873FF195B0E8200BA7589 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = pushRestAPI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "pushRestAPI/pushRestAPI-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		49987400195B0E8200BA7589 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				INFOPLIST_FILE = pushRestAPI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "pushRestAPI/pushRestAPI-Bridging-Header.h";
+			};
+			name = Release;
+		};
+		49987402195B0E8200BA7589 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/pushRestAPI.app/pushRestAPI";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = pushRestAPITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		49987403195B0E8200BA7589 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/pushRestAPI.app/pushRestAPI";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = pushRestAPITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		499873D6195B0E8200BA7589 /* Build configuration list for PBXProject "pushRestAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				499873FC195B0E8200BA7589 /* Debug */,
+				499873FD195B0E8200BA7589 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		499873FE195B0E8200BA7589 /* Build configuration list for PBXNativeTarget "pushRestAPI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				499873FF195B0E8200BA7589 /* Debug */,
+				49987400195B0E8200BA7589 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		49987401195B0E8200BA7589 /* Build configuration list for PBXNativeTarget "pushRestAPITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				49987402195B0E8200BA7589 /* Debug */,
+				49987403195B0E8200BA7589 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		499873E5195B0E8200BA7589 /* pushRestAPI.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				499873E6195B0E8200BA7589 /* pushRestAPI.xcdatamodel */,
+			);
+			currentVersion = 499873E6195B0E8200BA7589 /* pushRestAPI.xcdatamodel */;
+			path = pushRestAPI.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 499873D3195B0E8200BA7589 /* Project object */;
+}
