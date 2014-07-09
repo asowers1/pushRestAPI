@@ -34,11 +34,25 @@
 
 -(NSDictionary *)getBeaconCredsFromUUID:(NSString*)uuid
 {
-    NSString *urlString = [NSString stringWithFormat:@"http://experiencepush.com/csp_portal/rest/?uuid=%@",uuid];
-    NSData * data = [self synchronousRequestWithString:urlString];
+    NSString *urlString = [NSString stringWithFormat:@"http://experiencepush.com/csp_portal/rest/?uuid=%@&call=getBeacon&PUSH_ID=123",uuid];
+    NSData * data = [self synchronousRequestWithString:urlString :@"GET"];
     NSError *error;
     NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
     if(error){
+        NSLog(@"error");
+        return nil;
+    }
+    NSLog(@"fired");
+    return json;
+}
+
+-(NSDictionary *)getAllBeacons
+{
+    NSString *urlString = [NSString stringWithFormat:@"http://experiencepush.com/csp_portal/rest/?PUSH_ID=123&call=getAllBeacons"];
+    NSData * data = [self synchronousRequestWithString:urlString :@"GET"];
+    NSError *error;
+    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+    if (error) {
         return nil;
     }
     return json;
@@ -46,12 +60,12 @@
 
 #pragma mark - NSURLConnection synchronous methods
 
--(NSData*)synchronousRequestWithString:(NSString*)urlString
+-(NSData*)synchronousRequestWithString:(NSString*)urlString :(NSString*)HTTPMethod
 {
     NSURL *url = [NSURL URLWithString:urlString];
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     [theRequest addValue: @"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-    [theRequest setHTTPMethod:@"GET"];
+    [theRequest setHTTPMethod:HTTPMethod];
     NSURLResponse* response = nil;
     NSError* error = nil;
     NSData* data = [NSURLConnection sendSynchronousRequest:theRequest returningResponse:&response error:&error];

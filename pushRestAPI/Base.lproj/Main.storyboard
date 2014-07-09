@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6154.21" systemVersion="14A261i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ViQ-Xl-9cx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6185.7" systemVersion="14A283o" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="ViQ-Xl-9cx">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.13"/>
+        <deployment defaultVersion="1792" identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6181.2"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -23,27 +24,20 @@
                                 </constraints>
                             </imageView>
                             <navigationBar appearanceType="aqua" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BBL-FS-4SB">
-                                <rect key="frame" x="0.0" y="17" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="21" width="320" height="44"/>
                                 <items>
                                     <navigationItem title="RESTful API testing" id="BPh-xS-T9Y"/>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eGB-db-PdJ">
-                                <rect key="frame" x="112" y="209" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="sRf-yc-dfh" firstAttribute="leading" secondItem="BBL-FS-4SB" secondAttribute="leading" id="548-Jg-IZn"/>
-                            <constraint firstItem="eGB-db-PdJ" firstAttribute="top" secondItem="BBL-FS-4SB" secondAttribute="bottom" constant="148" id="8Vw-xI-e1h"/>
                             <constraint firstItem="sRf-yc-dfh" firstAttribute="leading" secondItem="hqj-gW-nXI" secondAttribute="leading" id="DUF-eB-SuS"/>
-                            <constraint firstItem="BBL-FS-4SB" firstAttribute="top" secondItem="hqj-gW-nXI" secondAttribute="top" constant="17" id="FdI-DW-Ppr"/>
+                            <constraint firstItem="BBL-FS-4SB" firstAttribute="top" secondItem="hqj-gW-nXI" secondAttribute="top" constant="21" id="FdI-DW-Ppr"/>
                             <constraint firstItem="sRf-yc-dfh" firstAttribute="trailing" secondItem="BBL-FS-4SB" secondAttribute="trailing" id="RZo-no-ZLh"/>
                             <constraint firstAttribute="bottom" secondItem="sRf-yc-dfh" secondAttribute="bottom" id="RwM-zH-QkC"/>
                             <constraint firstAttribute="trailing" secondItem="BBL-FS-4SB" secondAttribute="trailing" id="dpm-5h-C5o"/>
-                            <constraint firstAttribute="centerX" secondItem="eGB-db-PdJ" secondAttribute="centerX" id="vHH-Ze-uzl"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -58,6 +52,9 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination" type="retina4">
+            <size key="portraitSize" width="320" height="568"/>
+            <size key="landscapeSize" width="568" height="320"/>
+        </simulatedScreenMetrics>
     </simulatedMetricsContainer>
 </document>

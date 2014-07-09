@@ -43,7 +43,6 @@ NSTimeInterval const kPUSHDefaultTimeInterval = 0;
 // Implementation
 @implementation PUSHListener
 
-
 #pragma mark - Singleton
 + (instancetype)defaultListener {
     static id _sharedInstance = nil;

@@ -29,21 +29,22 @@
     
     //[[PUSHBeacon deviceBeacon] startTransmitting];
     
-    //NSDictionary * dict = [[RESTfulInterface RESTAPI]getBeaconCredsFromUUID:uuidNSString];
-    //NSLog(@"%@",dict);
+    NSDictionary * dict = [[RESTfulInterface RESTAPI]getBeaconCredsFromUUID:uuidNSString];
+    //NSDictionary *dict = [[RESTfulInterface RESTAPI]getAllBeacons];
+    NSLog(@"%@",dict);
     
     // Listen for iBeacons
     
 
-    [[PUSHListener defaultListener] listenForBeaconsWithProximityUUIDs:beacons];
-    // Handle Beacon Notification
-    [[NSNotificationCenter defaultCenter] addObserverForName:kPUSHDidFindNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
-        NSLog(@"%@", note.userInfo);
-        if (note.userInfo[kPUSHBeacon]) {
-            CLBeacon *beacon = note.userInfo[kPUSHBeacon];
-            NSLog(@"%@", [beacon accuracyStringWithUnitType:kPushUnitTypeFeet]);
-        }
-    }];
+//    [[PUSHListener defaultListener] listenForBeaconsWithProximityUUIDs:beacons notificationInterval:1];
+//    // Handle Beacon Notification
+//    [[NSNotificationCenter defaultCenter] addObserverForName:kPUSHDidFindNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
+//        NSLog(@"%@", note.userInfo);
+//        if (note.userInfo[kPUSHBeacon]) {
+//            CLBeacon *beacon = note.userInfo[kPUSHBeacon];
+//            NSLog(@"%@", [beacon accuracyStringWithUnitType:kPushUnitTypeFeet]);
+//        }
+//    }];
 
 }
 
