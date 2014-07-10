@@ -36,26 +36,34 @@
 {
     NSString *urlString = [NSString stringWithFormat:@"http://experiencepush.com/csp_portal/rest/?uuid=%@&call=getBeacon&PUSH_ID=123",uuid];
     NSData * data = [self synchronousRequestWithString:urlString :@"GET"];
-    NSError *error;
-    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-    if(error){
-        NSLog(@"error");
-        return nil;
+    if (data!=nil) {
+        NSError *error;
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+        if(error){
+            NSLog(@"error");
+            return nil;
+        }
+        return json;
     }
-    NSLog(@"fired");
-    return json;
+    return nil;
 }
 
 -(NSDictionary *)getAllBeacons
 {
+    
     NSString *urlString = [NSString stringWithFormat:@"http://experiencepush.com/csp_portal/rest/?PUSH_ID=123&call=getAllBeacons"];
+    
     NSData * data = [self synchronousRequestWithString:urlString :@"GET"];
-    NSError *error;
-    NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-    if (error) {
-        return nil;
+    if (data!=nil) {
+        
+        NSError *error;
+        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+        if (error) {
+            return nil;
+        }
+        return json;
     }
-    return json;
+    return nil;
 }
 
 #pragma mark - NSURLConnection synchronous methods
@@ -68,8 +76,10 @@
     [theRequest setHTTPMethod:HTTPMethod];
     NSURLResponse* response = nil;
     NSError* error = nil;
+    
     NSData* data = [NSURLConnection sendSynchronousRequest:theRequest returningResponse:&response error:&error];
     if(error){
+        
         return nil;
     }
     return data;
