@@ -66,7 +66,7 @@
     return nil;
 }
 
--(NSDictionary *)getAllListings
+-(NSArray *)getAllListings
 {
     
     NSString *urlString = [NSString stringWithFormat:@"http://experiencepush.com/csp_portal/rest/?PUSH_ID=123&call=getAllListings"];
@@ -74,12 +74,13 @@
     NSData * data = [self synchronousRequestWithString:urlString :@"GET"];
     if (data!=nil) {
         
-        NSError *error;
-        NSMutableDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-        if (error) {
+        NSError *e = nil;
+        NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData: data options: NSJSONReadingMutableContainers error: &e];
+
+        if (e) {
             return nil;
         }
-        return json;
+        return jsonArray;
     }
     return nil;
 }

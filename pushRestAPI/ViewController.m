@@ -30,8 +30,9 @@
     //[[PUSHBeacon deviceBeacon] startTransmitting];
     
     //NSDictionary * dict = [[RESTfulInterface RESTAPI]getBeaconCredsFromUUID:uuidNSString];
-    NSMutableDictionary *dict = [[RESTfulInterface RESTAPI]getAllListings];
-    NSLog(@"%@",dict);
+    NSArray *data = [[RESTfulInterface RESTAPI]getAllListings];
+    //NSArray *keys = [dict allKeys];
+    NSLog(@"%@",[data[0] objectForKey:@"address"]);
     
     // Listen for iBeacons
     
