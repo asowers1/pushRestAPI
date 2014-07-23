@@ -30,9 +30,19 @@
     //[[PUSHBeacon deviceBeacon] startTransmitting];
     
     //NSDictionary * dict = [[RESTfulInterface RESTAPI]getBeaconCredsFromUUID:uuidNSString];
-    NSArray *data = [[RESTfulInterface RESTAPI]getAllListings];
-    //NSArray *keys = [dict allKeys];
-    NSLog(@"%@",[data[0] objectForKey:@"address"]);
+
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        /* process downloaded data in Concurrent Queue */
+        NSArray *data = [[RESTfulInterface RESTAPI]getAllListings];
+        //NSArray *keys = [dict allKeys];
+        NSLog(@"%@",[data[0] objectForKey:@"address"]);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            
+            /* update UI on Main Thread */
+            
+        });
+    });
+    
     
     // Listen for iBeacons
     
