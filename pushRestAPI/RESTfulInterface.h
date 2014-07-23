@@ -23,5 +23,6 @@
 +(instancetype)RESTAPI;
 -(NSDictionary*)getBeaconCredsFromUUID:(NSString*)uuid;
 -(NSDictionary*)getAllBeacons;
+-(NSMutableDictionary*)getAllListings;
 //-(NSData*)synchronousRequestWithString:(NSString*)urlString; // may not be needed as public mehtod
 @end

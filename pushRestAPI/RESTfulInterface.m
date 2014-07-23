@@ -66,6 +66,24 @@
     return nil;
 }
 
+-(NSDictionary *)getAllListings
+{
+    
+    NSString *urlString = [NSString stringWithFormat:@"http://experiencepush.com/csp_portal/rest/?PUSH_ID=123&call=getAllListings"];
+    
+    NSData * data = [self synchronousRequestWithString:urlString :@"GET"];
+    if (data!=nil) {
+        
+        NSError *error;
+        NSMutableDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+        if (error) {
+            return nil;
+        }
+        return json;
+    }
+    return nil;
+}
+
 #pragma mark - NSURLConnection synchronous methods
 
 -(NSData*)synchronousRequestWithString:(NSString*)urlString :(NSString*)HTTPMethod
