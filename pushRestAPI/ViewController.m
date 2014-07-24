@@ -35,11 +35,20 @@
         /* process downloaded data in Concurrent Queue */
         NSArray *data = [[RESTfulInterface RESTAPI]getAllListings];
         //NSArray *keys = [dict allKeys];
-        NSLog(@"%@",[data[0] objectForKey:@"address"]);
+        int rent=0;
+        for (int i = 0; i < [data count]; i++) {
+            NSLog(@"%d: %@",i,[data[i] objectForKey:@"rent"]);
+            rent += [[data[i] objectForKey:@"rent"] integerValue];
+        }
+        rent = rent/[data count];
+        
+        NSLog(@"average rent: %d",rent);
         dispatch_async(dispatch_get_main_queue(), ^{
             
             /* update UI on Main Thread */
-            
+            while (data[0]==nil) {
+                NSLog(@"test");
+            }
         });
     });
     
