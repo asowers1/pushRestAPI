@@ -22,7 +22,10 @@
  */
 +(instancetype)RESTAPI;
 -(NSDictionary*)getBeaconCredsFromUUID:(NSString*)uuid;
+-(NSArray*)getUserFavorites:(NSString*)uuid;
+-(BOOL)addUserFavorite:(NSString*)uuid :(NSString*)favorite_id;
 -(NSDictionary*)getAllBeacons;
 -(NSArray*)getAllListings;
 //-(NSData*)synchronousRequestWithString:(NSString*)urlString; // may not be needed as public mehtod
+
 @end

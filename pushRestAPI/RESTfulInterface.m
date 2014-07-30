@@ -35,7 +35,7 @@
 -(NSDictionary *)getBeaconCredsFromUUID:(NSString*)uuid
 {
     NSString *urlString = [NSString stringWithFormat:@"http://experiencepush.com/csp_portal/rest/?uuid=%@&call=getBeacon&PUSH_ID=123",uuid];
-    NSData * data = [self synchronousRequestWithString:urlString :@"GET"];
+    NSData * data = [self synchronousRequestWithStringGET:urlString];
     if (data!=nil) {
         NSError *error;
         NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
@@ -48,12 +48,28 @@
     return nil;
 }
 
+-(NSArray*)getUserFavorites:(NSString *)uuid
+{
+    NSString *urlString = [NSString stringWithFormat:@"http://experiencepush.com/csp_portal/rest/?uuid=%@&call=getUserFavorites&PUSH_ID=123",uuid];
+    NSData * data = [self synchronousRequestWithStringGET:urlString];
+    if (data!=nil) {
+        NSError *error;
+        NSArray *jsonArray = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+        if (error) {
+            NSLog(@"error");
+            return nil;
+        }
+        return jsonArray;
+    }
+    return nil;
+}
+
 -(NSDictionary *)getAllBeacons
 {
     
     NSString *urlString = [NSString stringWithFormat:@"http://experiencepush.com/csp_portal/rest/?PUSH_ID=123&call=getAllBeacons"];
     
-    NSData * data = [self synchronousRequestWithString:urlString :@"GET"];
+    NSData * data = [self synchronousRequestWithStringGET:urlString];
     if (data!=nil) {
         
         NSError *error;
@@ -71,7 +87,7 @@
     
     NSString *urlString = [NSString stringWithFormat:@"http://experiencepush.com/csp_portal/rest/?PUSH_ID=123&call=getAllListings"];
     
-    NSData * data = [self synchronousRequestWithString:urlString :@"GET"];
+    NSData * data = [self synchronousRequestWithStringGET:urlString];
     if (data!=nil) {
         
         NSError *e = nil;
@@ -85,23 +101,54 @@
     return nil;
 }
 
+-(BOOL)addUserFavorite: (NSString*)uuid :(NSString*)favorite_id
+{
+    NSString *urlString = @"http://experiencepush.com/csp_portal/rest/index.php";
+    NSString *urlVariables = [NSString stringWithFormat:@"PUSH_ID=123&call=addUserFavorite&uuid=%@&favorite_id=%@",uuid,favorite_id];
+    NSData * data = [self synchronousRequestWithStringPOST:urlString :urlVariables];
+
+    if (data!=nil) {
+        NSString *content = [NSString stringWithUTF8String:[data bytes]];
+        NSLog(@"responseData: %@", content);
+        if ([content isEqualToString:@"0"]||[content isEqualToString:@"-1"]) {
+            return false;
+        }
+        return true;
+    }
+    NSLog(@"nil");
+    return false;
+}
 #pragma mark - NSURLConnection synchronous methods
 
--(NSData*)synchronousRequestWithString:(NSString*)urlString :(NSString*)HTTPMethod
+-(NSData*)synchronousRequestWithStringGET:(NSString*)urlString
 {
     NSURL *url = [NSURL URLWithString:urlString];
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
     [theRequest addValue: @"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-    [theRequest setHTTPMethod:HTTPMethod];
-    NSURLResponse* response = nil;
-    NSError* error = nil;
+    [theRequest setHTTPMethod:@"GET"];
+    NSURLResponse* response;
+    NSError* error;
     
     NSData* data = [NSURLConnection sendSynchronousRequest:theRequest returningResponse:&response error:&error];
     if(error){
-        
+        NSLog(@"%@",error);
         return nil;
     }
     return data;
+}
+
+-(NSData*)synchronousRequestWithStringPOST:(NSString *)urlString :(NSString*)urlVariableString
+{
+    NSString *myRequestString = urlVariableString;
+    NSData *myRequestData = [ NSData dataWithBytes: [ myRequestString UTF8String ] length: [ myRequestString length ] ];
+    NSMutableURLRequest *request = [ [ NSMutableURLRequest alloc ] initWithURL: [ NSURL URLWithString: urlString ] ];
+    [ request setHTTPMethod: @"POST" ];
+    [ request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-type"];
+    [ request setHTTPBody: myRequestData ];
+    NSURLResponse *response;
+    NSError *err;
+    NSData *returnData = [ NSURLConnection sendSynchronousRequest: request returningResponse:&response error:&err];
+    return returnData;
 }
 
 

@@ -33,22 +33,16 @@
 
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
         /* process downloaded data in Concurrent Queue */
-        NSArray *data = [[RESTfulInterface RESTAPI]getAllListings];
-        //NSArray *keys = [dict allKeys];
-        int rent=0;
-        for (int i = 0; i < [data count]; i++) {
-            NSLog(@"%d: %@",i,[data[i] objectForKey:@"rent"]);
-            rent += [[data[i] objectForKey:@"rent"] integerValue];
-        }
-        rent = rent/[data count];
+        //NSArray *data = [[RESTfulInterface RESTAPI]getUserFavorites:@"6461D97A-DC46-4E30-9FE5-F2F9C4BBBC06"];
+        //NSArray *locations = [[RESTfulInterface RESTAPI]getAllListings];
+        BOOL data = [[RESTfulInterface RESTAPI]addUserFavorite:@"6461D97A-DC46-4E30-9FE5-F2F9C4BBBC06" :@"70756"];
         
-        NSLog(@"average rent: %d",rent);
+        NSLog(@"data: %d",data);
+        
         dispatch_async(dispatch_get_main_queue(), ^{
             
             /* update UI on Main Thread */
-            while (data[0]==nil) {
-                NSLog(@"test");
-            }
+
         });
     });
     
