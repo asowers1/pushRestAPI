@@ -30,7 +30,7 @@
     return nil;
 }
 
-#pragma mark - RESTful data interface
+#pragma mark - RESTful data interface with GET calls
 
 -(NSDictionary *)getBeaconCredsFromUUID:(NSString*)uuid
 {
@@ -101,12 +101,13 @@
     return nil;
 }
 
+#pragma mark - RESTful data interface with POST calls
+
 -(BOOL)addUserFavorite: (NSString*)uuid :(NSString*)favorite_id
 {
     NSString *urlString = @"http://experiencepush.com/csp_portal/rest/index.php";
     NSString *urlVariables = [NSString stringWithFormat:@"PUSH_ID=123&call=addUserFavorite&uuid=%@&favorite_id=%@",uuid,favorite_id];
     NSData * data = [self synchronousRequestWithStringPOST:urlString :urlVariables];
-
     if (data!=nil) {
         NSString *content = [NSString stringWithUTF8String:[data bytes]];
         NSLog(@"responseData: %@", content);
@@ -115,7 +116,22 @@
         }
         return true;
     }
-    NSLog(@"nil");
+    return false;
+}
+
+-(BOOL)removeUserFavorite: (NSString*)uuid :(NSString*)favorite_id
+{
+    NSString *urlString =@"http://experiencepush.com/csp_portal/rest/index.php";
+    NSString *urlVariables = [NSString stringWithFormat:@"PUSH_ID=123&call=removeUserFavorite&uuid=%@&favorite_id=%@",uuid,favorite_id];
+    NSData * data = [self synchronousRequestWithStringPOST:urlString :urlVariables];
+    if (data!=nil) {
+        NSString *content = [NSString stringWithUTF8String:[data bytes]];
+        NSLog(@"responseData: %@", content);
+        if ([content isEqualToString:@"0"]||[content isEqualToString:@"-1"]) {
+            return false;
+        }
+        return true;
+    }
     return false;
 }
 #pragma mark - NSURLConnection synchronous methods
@@ -123,13 +139,13 @@
 -(NSData*)synchronousRequestWithStringGET:(NSString*)urlString
 {
     NSURL *url = [NSURL URLWithString:urlString];
-    NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url];
-    [theRequest addValue: @"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
-    [theRequest setHTTPMethod:@"GET"];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    [request addValue: @"application/x-www-form-urlencoded; charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPMethod:@"GET"];
     NSURLResponse* response;
     NSError* error;
     
-    NSData* data = [NSURLConnection sendSynchronousRequest:theRequest returningResponse:&response error:&error];
+    NSData* data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
     if(error){
         NSLog(@"%@",error);
         return nil;
@@ -142,9 +158,9 @@
     NSString *myRequestString = urlVariableString;
     NSData *myRequestData = [ NSData dataWithBytes: [ myRequestString UTF8String ] length: [ myRequestString length ] ];
     NSMutableURLRequest *request = [ [ NSMutableURLRequest alloc ] initWithURL: [ NSURL URLWithString: urlString ] ];
-    [ request setHTTPMethod: @"POST" ];
-    [ request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-type"];
-    [ request setHTTPBody: myRequestData ];
+    [request setHTTPMethod: @"POST" ];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"content-type"];
+    [request setHTTPBody: myRequestData ];
     NSURLResponse *response;
     NSError *err;
     NSData *returnData = [ NSURLConnection sendSynchronousRequest: request returningResponse:&response error:&err];
