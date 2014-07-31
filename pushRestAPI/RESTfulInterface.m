@@ -135,20 +135,15 @@
     return false;
 }
 
--(BOOL)addNewAnonUser:(NSString *)uuid
+-(NSString*)addNewAnonUser:(NSString *)uuid
 {
     NSString *urlString =@"http://experiencepush.com/csp_portal/rest/index.php";
     NSString *urlVariables = [NSString stringWithFormat:@"PUSH_ID=123&call=addNewAnonUser&uuid=%@",uuid];
     NSData * data = [self synchronousRequestWithStringPOST:urlString :urlVariables];
     if (data!=nil) {
-        NSString *content = [NSString stringWithUTF8String:[data bytes]];
-        NSLog(@"responseData: %@", content);
-        if ([content isEqualToString:@"0"]||[content isEqualToString:@"-1"]) {
-            return false;
-        }
-        return true;
+        return [NSString stringWithUTF8String:[data bytes]];
     }
-    return false;
+    return @"0";
 }
 #pragma mark - NSURLConnection synchronous methods
 

@@ -35,9 +35,9 @@
         /* process downloaded data in Concurrent Queue */
         //NSArray *data = [[RESTfulInterface RESTAPI]getUserFavorites:@"6461D97A-DC46-4E30-9FE5-F2F9C4BBBC06"];
         //NSArray *locations = [[RESTfulInterface RESTAPI]getAllListings];
-        BOOL data = [[RESTfulInterface RESTAPI]addNewAnonUser:@"CE4C8880-AB84-4401-A8BD-9EA6790C5F3E"];
+        NSString* data = [[RESTfulInterface RESTAPI]addNewAnonUser:@"88E643F5-A4F3-429A-9367-86C59755EDAC"];
         
-        NSLog(@"data: %d",data);
+        NSLog(@"data: %@",data);
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
