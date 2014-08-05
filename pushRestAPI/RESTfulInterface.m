@@ -64,7 +64,7 @@
     return nil;
 }
 
--(NSDictionary *)getAllBeacons
+-(NSArray *)getAllBeacons
 {
     
     NSString *urlString = [NSString stringWithFormat:@"http://experiencepush.com/csp_portal/rest/?PUSH_ID=123&call=getAllBeacons"];
@@ -73,7 +73,7 @@
     if (data!=nil) {
         
         NSError *error;
-        NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+        NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
         if (error) {
             return nil;
         }

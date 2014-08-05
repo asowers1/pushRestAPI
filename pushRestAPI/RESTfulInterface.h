@@ -26,7 +26,7 @@
 -(BOOL)addUserFavorite:(NSString*)uuid :(NSString*)favorite_id;
 -(BOOL)removeUserFavorite:(NSString*)uuid :(NSString*)favorite_id;
 -(NSString*)addNewAnonUser:(NSString*)uuid;
--(NSDictionary*)getAllBeacons;
+-(NSArray*)getAllBeacons;
 -(NSArray*)getAllListings;
 //-(NSData*)synchronousRequestWithString:(NSString*)urlString; // may not be needed as public mehtod
 

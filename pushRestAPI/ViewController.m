@@ -36,8 +36,9 @@
         //NSArray *data = [[RESTfulInterface RESTAPI]getUserFavorites:@"6461D97A-DC46-4E30-9FE5-F2F9C4BBBC06"];
         //NSArray *locations = [[RESTfulInterface RESTAPI]getAllListings];
         //NSArray * data = [[RESTfulInterface RESTAPI]getUserFavorites:@"E9D1297F-6D74-45DD-AFC6-8F9E1ACD0440"];
-        BOOL data = [[RESTfulInterface RESTAPI] addUserFavorite:@"464A5F1F-3DDC-4321-93E5-6EDB6344B065": @"1234"];
-        NSLog(@"data: %d",data);
+        //BOOL data = [[RESTfulInterface RESTAPI] addUserFavorite:@"464A5F1F-3DDC-4321-93E5-6EDB6344B065": @"1234"];
+        NSArray *beacons = [[RESTfulInterface RESTAPI] getAllBeacons];
+        NSLog(@"data: %@",beacons);
         
         dispatch_async(dispatch_get_main_queue(), ^{
             
