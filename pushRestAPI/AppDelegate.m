@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#define IS_OS_8_OR_LATER ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
 
 @interface AppDelegate ()
             
@@ -21,6 +22,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    self.locationManager = [[CLLocationManager alloc] init];
+    if(IS_OS_8_OR_LATER) {
+        [self.locationManager requestAlwaysAuthorization];
+    }
     return YES;
 }
 

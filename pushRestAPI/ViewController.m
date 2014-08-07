@@ -21,6 +21,7 @@
             
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
 //    NSString * uuidNSString = @"AAAAAAAA-BBBB-BBBB-CCCC-CCCCDDDDDDDD";  // Kontakt uid
 //    NSUUID * myUUID = [[NSUUID alloc] initWithUUIDString:uuidNSString];
 //    NSArray *beacons = [NSArray arrayWithObjects:myUUID, nil];
