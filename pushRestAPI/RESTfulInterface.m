@@ -73,6 +73,11 @@
     if (data!=nil) {
         
         NSError *error;
+        
+        //Receive multi-dimentisonal array
+        //Inner array   
+        //ID, EnglishID, UUID, Major, Minor
+        
         NSArray *json = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
         if (error) {
             return nil;
