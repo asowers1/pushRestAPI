@@ -24,6 +24,8 @@
 	<true/>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>pushRestAPI needs your location for beacon monitoring and broadcasting</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Range for beacons</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>bluetooth-peripheral</string>
