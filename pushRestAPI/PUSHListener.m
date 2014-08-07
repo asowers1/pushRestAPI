@@ -131,6 +131,7 @@ NSTimeInterval const kPUSHDefaultTimeInterval = 0;
 
 #pragma mark - Location Manager Delegate
 - (void)locationManager:(CLLocationManager *)manager didRangeBeacons:(NSArray *)beacons inRegion:(CLBeaconRegion *)region {
+    NSLog(@"locationManager didRangeBeacons");
     // Notify for each Beacon found
     for (NSInteger b = 0; b < beacons.count; b++) {
         [self sendNotificationWithBeacon:beacons[b]];
@@ -138,6 +139,7 @@ NSTimeInterval const kPUSHDefaultTimeInterval = 0;
 }
 
 - (void)locationManager:(CLLocationManager *)manager didDetermineState:(CLRegionState)state forRegion:(CLRegion *)region {
+    NSLog(@"locationManager didDetermineState");
     if ([region isKindOfClass:[CLBeaconRegion class]] && state == CLRegionStateInside) {
         [self.locationManager startRangingBeaconsInRegion:(CLBeaconRegion *)region];
     }
