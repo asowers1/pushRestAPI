@@ -64,7 +64,7 @@
             abort();
         } 
     }
-}
+} 
 
 #pragma mark - Core Data stack
 
