@@ -44,21 +44,26 @@
     
     
     // use this code
-    NSArray *beacons = [[RESTfulInterface RESTAPI] getAllBeacons];
-    NSMutableArray *uuidArray = [[NSMutableArray alloc] init];
-    for (int i = 0; i<beacons.count; i++) {
-        [uuidArray addObject:[[NSUUID alloc] initWithUUIDString:beacons[i][2]]];
-    }
-    NSLog(@"data: %@",uuidArray);
-    [[PUSHListener defaultListener] listenForBeaconsWithProximityUUIDs:uuidArray notificationInterval:1];
-    // Handle Beacon Notification
-    [[NSNotificationCenter defaultCenter] addObserverForName:kPUSHDidFindNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
-        NSLog(@"%@", note.userInfo);
-        if (note.userInfo[kPUSHBeacon]) {
-            CLBeacon *beacon = note.userInfo[kPUSHBeacon];
-            NSLog(@"%@", [beacon accuracyStringWithUnitType:kPushUnitTypeFeet]);
-        }
-    }];
+    
+    NSLog(@"registerTriggeredBeaconAction: %d",[[RESTfulInterface RESTAPI] registerTriggeredBeaconAction:@"33" :@"rental" :1 :@"FA6A3E2D-2D3E-4E37-AD1F-B2E9FDE36A3C"]);
+    NSLog(@"getCampaignHasBeacon: %@",[[RESTfulInterface RESTAPI] getCampaignHasBeacon]);
+    
+    
+//    NSArray *beacons = [[RESTfulInterface RESTAPI] getAllBeacons];
+//    NSMutableArray *uuidArray = [[NSMutableArray alloc] init];
+//    for (int i = 0; i<beacons.count; i++) {
+//        [uuidArray addObject:[[NSUUID alloc] initWithUUIDString:beacons[i][2]]];
+//    }
+//    NSLog(@"data: %@",uuidArray);
+//    [[PUSHListener defaultListener] listenForBeaconsWithProximityUUIDs:uuidArray notificationInterval:1];
+//    // Handle Beacon Notification
+//    [[NSNotificationCenter defaultCenter] addObserverForName:kPUSHDidFindNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
+//        NSLog(@"%@", note.userInfo);
+//        if (note.userInfo[kPUSHBeacon]) {
+//            CLBeacon *beacon = note.userInfo[kPUSHBeacon];
+//            NSLog(@"%@", [beacon accuracyStringWithUnitType:kPushUnitTypeFeet]);
+//        }
+//    }];
     
     // Listen for iBeacons
     
