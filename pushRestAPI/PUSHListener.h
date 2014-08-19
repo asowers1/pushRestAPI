@@ -29,19 +29,19 @@ extern NSString * const kPUSHBeacon;
 #pragma mark -Start Listner
 
 /**
- *  Tells the listener to start listening for iBeacons with an array of proximity UUIDs to listne for. The default notification interval of 0 seconds is used.
+ *  Tells the listener to start listening for iBeacons with an array of beaconRegions to listne for. The default notification interval of 0 seconds is used.
  *
  *  @param proximityIds NSArray of NSUUIDs
  */
-- (void)listenForBeaconsWithProximityUUIDs:(NSArray *)beacons;
+- (void)listenForBeacons:(NSArray *)beacons;
 
 /**
- *  Tells the listener to start listening for iBeacons with an array of proximity UUIDs to listen for. The notification interval sets the number of seconds to wait after seeing a beacon before notifying again.
+ *  Tells the listener to start listening for iBeacons with an array of beaconRegions to listen for. The notification interval sets the number of seconds to wait after seeing a beacon before notifying again.
  *
- *  @param proximityIds NSArray
+ *  @param beacons NSArray
  *  @param seconds      NSTimeInterval
  */
-- (void)listenForBeaconsWithProximityUUIDs:(NSArray *)proximityIds notificationInterval:(NSTimeInterval)seconds;
+- (void)listenForBeacons:(NSArray *)beacons notificationInterval:(NSTimeInterval)seconds;
 
 /**
  *  Tells the listener to start listening for iBeacons with a dictionaty of beacon credentials. JSON scheme is predetermined and grabed via the RESTful service.

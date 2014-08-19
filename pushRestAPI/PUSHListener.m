@@ -71,23 +71,22 @@ NSTimeInterval const kPUSHDefaultTimeInterval = 0;
 
 
 #pragma mark - Start/Stop Listening
-- (void)listenForBeaconsWithProximityUUIDs:(NSArray *)proximityIds {
+- (void)listenForBeacons:(NSArray *)beacons {
     // Register for region monitoring
-    for (NSUUID *proximityId in proximityIds) {
+    for (CLBeaconRegion *beaconRegion in beacons) {
         // Create the beacon region tohv be monitored.
-        CLBeaconRegion *beaconRegion = [[CLBeaconRegion alloc] initWithProximityUUID:proximityId identifier:kPUSHBeaconRangeIdentifier];
         beaconRegion.notifyEntryStateOnDisplay = YES;
         
         // Register the beacon region with the location manager.
         [self.locationManager startMonitoringForRegion:beaconRegion];
         [self.locationManager requestStateForRegion:beaconRegion];
-        [self.beaconRegions setObject:beaconRegion forKey:proximityId.UUIDString];
+        [self.beaconRegions setObject:beaconRegion forKey:beaconRegion.proximityUUID.UUIDString];
     }
 }
 
-- (void)listenForBeaconsWithProximityUUIDs:(NSArray *)proximityIds notificationInterval:(NSTimeInterval)seconds {
+- (void)listenForBeacons:(NSArray *)beacons notificationInterval:(NSTimeInterval)seconds {
     self.beaconInterval = seconds;
-    [self listenForBeaconsWithProximityUUIDs:proximityIds];
+    [self listenForBeacons:beacons];
 }
 
 - (void)stopListening {
