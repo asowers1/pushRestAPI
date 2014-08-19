@@ -24,7 +24,7 @@
     // Override point for customization after application launch.
     self.locationManager = [[CLLocationManager alloc] init];
     if(IS_OS_8_OR_LATER) {
-        [self.locationManager requestAlwaysAuthorization];
+        //[self.locationManager requestAlwaysAuthorization];
     }
     return YES;
 }
@@ -64,7 +64,7 @@
             abort();
         } 
     }
-}
+} 
 
 #pragma mark - Core Data stack
 
